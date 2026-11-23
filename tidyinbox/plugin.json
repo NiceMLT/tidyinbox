@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tidyinbox",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Clean promotional email in Gmail or Outlook. Install TidyInbox, then invoke it with @tidyinbox in ChatGPT Desktop.",
   "author": { "name": "TidyInbox" },
   "license": "MIT",
@@ -12,14 +12,14 @@
       "onboardingSkill": "./skills/tidy-inbox/SKILL.md",
       "interface": {
         "displayName": "TidyInbox",
-        "shortDescription": "Clean promotional email with @tidyinbox",
-        "longDescription": "Install TidyInbox from the tidyinbox-marketplace in ChatGPT Desktop, connect Gmail or Outlook, then start a new chat and type @tidyinbox. Set a mailbox, search scope, and goal. For a broad inbox cleanup, it groups likely promotions by sender for your review before making changes. TidyInbox runs only when invoked; it does not monitor your mailbox in the background.",
+        "shortDescription": "Find and clean promotional email with @tidyinbox",
+        "longDescription": "Install TidyInbox from the tidyinbox-marketplace in ChatGPT Desktop, connect Gmail or Outlook, then start a new chat and type @tidyinbox. It identifies recurring marketing and unsubscribe failures, protects receipts and account mail, then gives one concise cleanup proposal with any exceptions to keep. TidyInbox runs only when invoked; it does not monitor your mailbox in the background.",
         "developerName": "TidyInbox",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
         "defaultPrompt": [
-          "@tidyinbox review promotional email in my Outlook Inbox from the past 60 days, group it by sender, and make no changes",
-          "@tidyinbox unsubscribe from [sender] in [Gmail or Outlook] and move its promotional mail to recoverable deletion, keeping receipts and account notices"
+          "@tidyinbox clean up my Outlook inbox: find recurring promotions and unsubscribe failures, keep receipts and account notices, then show me the proposed cleanup",
+          "@tidyinbox keep [sender], unsubscribe from the other promotional senders we reviewed, and move their matching promotions to recoverable Deleted Items"
         ]
       }
     }
