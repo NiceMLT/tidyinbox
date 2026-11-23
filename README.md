@@ -1,23 +1,32 @@
 # TidyInbox
 
-TidyInbox is a ChatGPT plugin for reviewing promotional email, unsubscribing safely, and clearing old messages from Gmail or Outlook.
+TidyInbox helps you review unwanted promotional email, unsubscribe where supported, and clear old promotions from Gmail or Outlook.
 
-## Download and install
+## Install once
 
-1. Download `tidyinbox-source.zip` from this repository and extract it.
-2. Open the extracted folder in ChatGPT desktop as a local plugin marketplace source. The package includes `.claude-plugin/marketplace.json` and the plugin under `tidyinbox/`.
-3. Install **TidyInbox** from the Plugins Directory.
-4. Connect your own Gmail or Outlook account in ChatGPT under **Settings → Apps**.
+Install it with the Codex CLI, then use it in ChatGPT Desktop. The HTTPS one-click unsubscribe helper requires Node.js 18 or later.
 
-The local HTTPS one-click helper requires Node.js and ChatGPT desktop. Gmail and Outlook access uses the mailbox actions already connected in ChatGPT; TidyInbox does not collect mailbox passwords or store message contents.
+1. Open Terminal and run:
 
-## What it does
+   ```sh
+   codex plugin marketplace add NiceMLT/tidyinbox
+   ```
 
-- Checks that messages are addressed to the connected mailbox before changing them.
-- Protects billing, security, order, school, family, medical, travel, legal, tax, and uncertain messages.
-- Uses supported unsubscribe methods, including RFC 8058 HTTPS one-click headers.
-- Moves eligible promotions to recoverable Deleted Items or Trash. It never empties Trash.
+2. Restart ChatGPT Desktop. Open the Plugins Directory, select the **tidyinbox-marketplace** source, and install **TidyInbox**.
+3. Connect Gmail or Outlook in ChatGPT under **Settings → Apps** if you have not already.
+4. Start a new chat and type **@tidyinbox**. Choose TidyInbox from the mention menu if it appears, then ask it to clean the mailbox.
 
-## Source
+## Try it
 
-The complete plugin source, marketplace entry, setup instructions, and local MCP helper are in [`tidyinbox-source.zip`](./tidyinbox-source.zip).
+- **@tidyinbox clean up my Outlook inbox**
+- **@tidyinbox review my Gmail promotions and unsubscribe from the ones I don't want**
+
+The cleanup skill checks message recipients, protects important or uncertain mail, and moves eligible promotions only to recoverable Deleted Items or Trash. It never empties Trash. The plugin uses your existing ChatGPT mailbox connection; it does not ask for mailbox passwords or store messages.
+
+## If @tidyinbox does not appear
+
+The plugin must be installed in ChatGPT Desktop before you can mention it. Confirm that the marketplace command completed, restart ChatGPT Desktop, and install TidyInbox from the Plugins Directory. Then start a new chat and type **@** to select it.
+
+## Share
+
+Send people this repository: https://github.com/NiceMLT/tidyinbox. They can run the one-line marketplace command above and install TidyInbox in ChatGPT Desktop.
