@@ -13,7 +13,7 @@ Use ChatGPT Desktop. The HTTPS one-click helper requires Node.js 18 or later.
 
 ## Ask for a cleanup
 
-Name the mailbox and any exceptions to keep. A broad request such as “clean my Outlook inbox” should make TidyInbox group recurring marketing/newsletters, unsubscribe failure notices, protected transactional mail, and uncertain items. It should propose one batch with sender names and counts, then ask once before changing mail.
+Name the mailbox and any exceptions to keep. A broad request such as “clean my Outlook inbox” should scan the full Inbox, paginate through results, and group recurring marketing/newsletters, unsubscribe failure notices, protected transactional mail, and uncertain items. It should propose one batch with sender names and counts, then ask once before changing mail.
 
 > @tidyinbox Clean up my Outlook inbox. Find recurring promotions and unsubscribe failures, keep receipts and account notices, and show me one proposed cleanup.
 
