@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tidyinbox",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Clean promotional email in Gmail or Outlook. Install TidyInbox, then invoke it with @tidyinbox in ChatGPT Desktop.",
   "author": { "name": "TidyInbox" },
   "license": "MIT",
@@ -13,12 +13,12 @@
       "interface": {
         "displayName": "TidyInbox",
         "shortDescription": "Find and clean promotional email with @tidyinbox",
-        "longDescription": "Install TidyInbox from the tidyinbox-marketplace in ChatGPT Desktop, connect Gmail or Outlook, then start a new chat and type @tidyinbox. It identifies recurring marketing and unsubscribe failures, protects receipts and account mail, then gives one concise cleanup proposal with any exceptions to keep. TidyInbox runs only when invoked; it does not monitor your mailbox in the background.",
+        "longDescription": "Install TidyInbox from the tidyinbox-marketplace in ChatGPT Desktop, connect Gmail or Outlook, then start a new chat and type @tidyinbox. For a broad cleanup it scans the full Inbox, groups recurring marketing and unsubscribe failures, protects receipts and account mail, then gives one concise cleanup proposal with exceptions to keep. TidyInbox runs only when invoked; it does not monitor your mailbox in the background.",
         "developerName": "TidyInbox",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
         "defaultPrompt": [
-          "@tidyinbox clean up my Outlook inbox: find recurring promotions and unsubscribe failures, keep receipts and account notices, then show me the proposed cleanup",
+          "@tidyinbox clean up my Outlook inbox: scan the full Inbox for recurring promotions and unsubscribe failures, keep receipts and account notices, then show me one proposed cleanup",
           "@tidyinbox keep [sender], unsubscribe from the other promotional senders we reviewed, and move their matching promotions to recoverable Deleted Items"
         ]
       }
