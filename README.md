@@ -35,7 +35,7 @@ A useful request names four things: **which mailbox**, **what messages to look a
 
 After TidyInbox shows a proposal with sender names and message counts, give one instruction for the batch. For example: “Keep On3, ditch the rest.” That approves unsubscribing from the other displayed, high-confidence marketing senders and moving their matching promotions to recoverable Deleted Items or Trash. It does not include uncertain or protected messages. TidyInbox should not ask again whether to move the same messages.
 
-For a broad cleanup, TidyInbox should confidently group recurring marketing and newsletters—including promotions from familiar retailers—separately from unsubscribe failure notices, protected transactional mail, and uncertain items. It should make one concise proposal with counts and exceptions, then ask once before making the batch. Review-only requests make no changes.
+For a broad cleanup without a date filter, TidyInbox should scan the full Inbox, paginate through all available results, and confidently group recurring marketing and newsletters—including promotions from familiar retailers—separately from unsubscribe failure notices, protected transactional mail, and uncertain items. It should make one concise proposal with counts and exceptions, then ask once before making the batch. Review-only requests make no changes.
 
 ## What TidyInbox does
 
