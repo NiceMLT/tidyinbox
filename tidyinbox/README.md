@@ -1,6 +1,6 @@
 # TidyInbox
 
-TidyInbox helps you review promotional email, unsubscribe where supported, and clear old promotions from Gmail or Outlook. It uses mailbox actions you connect to ChatGPT; it never collects mailbox passwords or stores message contents. A local MCP helper provides RFC 8058 HTTPS one-click unsubscribe support.
+TidyInbox helps you identify recurring marketing, unsubscribe failures, and clutter in Gmail or Outlook. It uses mailbox actions you connect to ChatGPT; it never collects mailbox passwords or stores message contents. A local MCP helper provides RFC 8058 HTTPS one-click unsubscribe support.
 
 ## Install and invoke
 
@@ -9,51 +9,42 @@ Use ChatGPT Desktop. The HTTPS one-click helper requires Node.js 18 or later.
 1. In Terminal, run: `codex plugin marketplace add NiceMLT/tidyinbox`
 2. Restart ChatGPT Desktop. Open the Plugins Directory and install TidyInbox from the **tidyinbox-marketplace** source.
 3. Connect Gmail or Outlook under **Settings → Apps** if needed.
-4. Start a new chat, type **@tidyinbox**, and select TidyInbox. You can ask for the task in plain language; you do not need to type “run.”
+4. Start a new chat, type **@tidyinbox**, and select TidyInbox. Ask in plain language; you do not need to type “run.”
 
-## Write a useful request
+## Ask for a cleanup
 
-Include the mailbox, the message scope, the action you want, and anything to protect. Start with a review-only request if you want to inspect candidates before making changes.
+Name the mailbox and any exceptions to keep. A broad request such as “clean my Outlook inbox” should make TidyInbox group recurring marketing/newsletters, unsubscribe failure notices, protected transactional mail, and uncertain items. It should propose one batch with sender names and counts, then ask once before changing mail.
 
-### Review only
+> @tidyinbox Clean up my Outlook inbox. Find recurring promotions and unsubscribe failures, keep receipts and account notices, and show me one proposed cleanup.
 
-```
-@tidyinbox Review promotional mail in my Outlook Inbox from the past 60 days. Group by sender and show counts and unsubscribe options. Do not change anything.
-```
+After reviewing the proposal, a short exception list is enough:
 
-### Unsubscribe and move a specific sender
+> Keep On3, ditch the rest.
 
-```
-@tidyinbox In my Outlook Inbox, unsubscribe from [sender] where supported and move that sender's promotional messages to Deleted Items. Keep receipts and account notices. Report requests as submitted or confirmed, and list failures separately.
-```
+That authorizes unsubscribe requests for the other displayed, high-confidence marketing senders and recoverable deletion of their matching promotional messages. TidyInbox should not ask again whether to move the same messages. Uncertain or protected mail stays untouched.
 
-### Triage a backlog in two steps
+## Review without changes
 
-```
-@tidyinbox Group likely promotional mail in my Gmail Inbox by sender and show counts. Protect bills, security notices, orders, school, family, travel, and medical messages. Do not unsubscribe or move anything yet.
-```
+> @tidyinbox Review promotional mail in my Outlook Inbox from the past 60 days. Group by sender and show counts and unsubscribe options. Do not change anything.
 
-After reviewing the groups, name the senders you want processed and say whether you want unsubscribe, message cleanup, or both.
+“Review” and “show me” requests are read-only until the user authorizes a cleanup.
 
-### Handle unsubscribe bounces
+## Handle unsubscribe failures
 
-```
-@tidyinbox Find undeliverable replies to my unsubscribe requests. Tell me which requests failed. Move only those reply notices to Deleted Items, and do not count them as successful unsubscribes.
-```
+> @tidyinbox Find undeliverable replies to my unsubscribe requests. Tell me which requests failed. Move only those reply notices to Deleted Items, and do not count them as successful unsubscribes.
 
-An undeliverable reply means the request failed. TidyInbox must not retry it automatically or claim the sender unsubscribed. A provider accepting a request means it was submitted; report it as confirmed only when there is evidence from the sender.
+An undeliverable reply means the request failed. TidyInbox must not retry automatically or claim the sender unsubscribed. A provider accepting a request means it was submitted; report it as confirmed only when there is evidence from the sender.
 
 ## Scope and safety
 
-- “Review” or “show me” means no mailbox changes unless the user separately authorizes them.
-- For a broad request like “clean my inbox,” identify clear promotional groups and present them before bulk changes when the senders or actions are unclear.
-- Check message recipients against the connected mailbox and verified aliases before acting.
-- Protect security notices, bills, receipts, orders, medical, school, family, travel, legal, tax, and uncertain mail.
-- Move eligible messages only to recoverable Deleted Items (Outlook) or Trash (Gmail). Never empty Trash or permanently delete mail.
-- Use header-based unsubscribe methods; do not guess or follow unsubscribe links from message bodies.
-- TidyInbox runs when asked. It does not monitor or clean new mail in the background.
+- Treat recurring retailer, club, ticketing, entertainment, sports-newsletter, and fundraising mail as marketing when messages are offers or newsletters. A familiar brand does not make its promotional mail transactional.
+- Protect bills, receipts, orders, shipping notices, account/security alerts, medical, school, family, travel, legal, tax, and uncertain mail.
+- Check recipients against the connected mailbox and verified aliases before acting.
+- Use supported header-based unsubscribe methods; do not guess or follow unsubscribe links from message bodies.
+- Move eligible mail only to recoverable Deleted Items (Outlook) or Trash (Gmail). Never empty Trash or permanently delete mail.
+- TidyInbox runs only when asked; it does not monitor or clean new mail in the background.
 
-## Sharing
+## Share
 
 Add the GitHub marketplace with the command above, install TidyInbox in ChatGPT Desktop, connect a mailbox, and invoke it with **@tidyinbox**. The local HTTPS helper makes this desktop-only. The marketplace source is [NiceMLT/tidyinbox](https://github.com/NiceMLT/tidyinbox).
 
