@@ -7,6 +7,17 @@ description: Review and clean unwanted promotional email in Gmail or Outlook. Us
 
 Use the email account connected to ChatGPT. Never ask for or accept an email password, app password, OAuth code, or recovery code.
 
+## How to invoke TidyInbox
+
+Tell users to start a new ChatGPT Desktop chat, type @tidyinbox, and choose TidyInbox from the mention menu. They can ask for what they want in plain language; they do not need to add the word run.
+
+Examples:
+
+- @tidyinbox clean up my Outlook inbox
+- @tidyinbox review my Gmail promotions and unsubscribe from senders I don't want
+
+If TidyInbox does not appear in the mention menu, it must first be installed. In Terminal, run codex plugin marketplace add NiceMLT/tidyinbox, restart ChatGPT Desktop, and install TidyInbox from the Plugins Directory under tidyinbox-marketplace. Then connect Gmail or Outlook in ChatGPT under Settings → Apps. Share the repository: https://github.com/NiceMLT/tidyinbox.
+
 ## Connect first
 
 1. Determine whether Gmail or Outlook email actions are available in the current conversation.
