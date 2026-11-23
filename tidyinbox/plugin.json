@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tidyinbox",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Clean promotional email in Gmail or Outlook. Install TidyInbox, then invoke it with @tidyinbox in ChatGPT Desktop.",
   "author": { "name": "TidyInbox" },
   "license": "MIT",
@@ -13,13 +13,13 @@
       "interface": {
         "displayName": "TidyInbox",
         "shortDescription": "Clean promotional email with @tidyinbox",
-        "longDescription": "Install TidyInbox from the tidyinbox-marketplace in ChatGPT Desktop, connect Gmail or Outlook, then start a new chat and type @tidyinbox. Ask it to clean your inbox or review promotions. It checks recipients, protects important mail, uses supported unsubscribe requests, and moves old promotions to recoverable Deleted Items or Trash.",
+        "longDescription": "Install TidyInbox from the tidyinbox-marketplace in ChatGPT Desktop, connect Gmail or Outlook, then start a new chat and type @tidyinbox. Set a mailbox, search scope, and goal. For a broad inbox cleanup, it groups likely promotions by sender for your review before making changes. TidyInbox runs only when invoked; it does not monitor your mailbox in the background.",
         "developerName": "TidyInbox",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
         "defaultPrompt": [
-          "@tidyinbox clean up my Outlook inbox",
-          "@tidyinbox review my Gmail promotions and unsubscribe from unwanted senders"
+          "@tidyinbox review promotional email in my Outlook Inbox from the past 60 days, group it by sender, and make no changes",
+          "@tidyinbox unsubscribe from [sender] in [Gmail or Outlook] and move its promotional mail to recoverable deletion, keeping receipts and account notices"
         ]
       }
     }
