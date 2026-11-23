@@ -1,0 +1,12 @@
+{
+  "name": "tidyinbox-marketplace",
+  "interface": { "displayName": "TidyInbox" },
+  "plugins": [
+    {
+      "name": "tidyinbox",
+      "source": { "source": "local", "path": "./tidyinbox" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
