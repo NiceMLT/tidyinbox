@@ -66,5 +66,3 @@ After the user authorizes the proposal, move only matching promotional messages 
 ## Finish with an audit summary
 
 Report the mailbox and search scope; messages reviewed; senders grouped as marketing, failure notices, protected, or uncertain; unsubscribe requests submitted, confirmed, failed, or needing manual review; messages newly moved to recoverable deletion; matching messages already in Deleted Items/Trash; and items left untouched. Keep newly moved and already-deleted counts distinct. Report a final Inbox count only if verified after the batch. Never claim an action succeeded unless its tool result confirms it.
-
-Report the mailbox and search scope; messages reviewed; senders grouped as marketing, failure notices, protected, or uncertain; unsubscribe requests submitted, confirmed, failed, or needing manual review; messages moved to recoverable deletion; matching messages already in Deleted Items/Trash; and items left untouched. Keep newly moved and already-deleted counts distinct. Report a final Inbox count only if you verified it after the batch. Never claim an action succeeded unless its tool result confirms it.
