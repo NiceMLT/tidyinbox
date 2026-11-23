@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tidyinbox",
+  "version": "0.2.0",
+  "description": "Review promotional email, unsubscribe safely, and clear old copies from Gmail or Outlook.",
+  "author": { "name": "TidyInbox" },
+  "license": "MIT",
+  "keywords": ["email", "inbox", "unsubscribe", "spam", "gmail", "outlook"],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "onboardingSkill": "./skills/tidy-inbox/SKILL.md",
+      "interface": {
+        "displayName": "TidyInbox",
+        "shortDescription": "Clean promotional mail and unsubscribe safely",
+        "longDescription": "TidyInbox uses the Gmail or Outlook account you connect in ChatGPT. It checks recipients, protects important mail, submits supported unsubscribe requests, and moves old promotions to recoverable Deleted Items or Trash.",
+        "developerName": "TidyInbox",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": [
+          "Use TidyInbox to find and unsubscribe from unwanted promotional email.",
+          "Use TidyInbox to clean up old promotional messages while protecting important mail."
+        ]
+      }
+    }
+  }
+}
